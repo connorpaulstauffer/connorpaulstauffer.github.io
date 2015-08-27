@@ -9,7 +9,12 @@ figure, button {
   background: transparent;
   text-decoration: inherit;
   text-align: inherit;
-  color: inherit;
+  /*color: inherit;*/
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 * {
@@ -45,12 +50,20 @@ body {
 
 #header h1 {
   font-size: 2vw;
-	font-style: normal;
-	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
   color: #206BA4;
   vertical-align: middle;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#header h2 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  line-height: 26.4px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 #content {
@@ -84,12 +97,31 @@ body {
 .grid-item h2 {
   padding-top: 10px;
   padding-left: 15px;
+  padding-bottom: 5px;
   font-size: 1.75vw;
   font-weight: 500;
   line-height: 26.4px;
 }
 
+.grid-item h3 {
+  padding-top: 5px;
+  padding-left: 15px;
+  font-weight: 600;
+  font-size: 1.25vw;
+}
+
 .grid-item p {
   padding: 15px;
-  padding-top: 10px;
+  padding-top: 5px;
+  font-size: 1.25vw;
+}
+
+.grid-item ul {
+  padding: 15px;
+  padding-top: 5px;
+  font-size: 1.25vw;
+}
+
+.grid-item li {
+  padding-bottom: 2px;
 }
