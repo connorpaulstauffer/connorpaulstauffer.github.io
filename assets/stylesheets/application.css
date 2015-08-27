@@ -13,6 +13,16 @@ figure, button {
   list-style: none;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -37,9 +47,12 @@ body {
 #sidebar {
   order: 0;
   background-color: #F1EFE2;
-  width: 25%;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  /*overflow-y: hidden;*/
+  height: 100%;
+  position: fixed;
 }
 
 #sidebar #header {
@@ -96,6 +109,8 @@ body {
   width: 75%;
   padding-left: 20px;
   padding-bottom: 20px;
+  overflow-y: scroll;
+  margin-left: 300px;
 }
 
 #content .grid-item {
@@ -138,6 +153,10 @@ body {
   padding: 15px;
   padding-top: 5px;
   font-size: 1.25vw;
+}
+
+.grid-item p.small {
+  font-size: 1.15vw;
 }
 
 .grid-item ul {

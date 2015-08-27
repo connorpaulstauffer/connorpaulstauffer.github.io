@@ -1,4 +1,6 @@
 $(function () {
+  $("#content-grid").isotope({ filter: ".project" });
+
   $("#content-grid").isotope({
     itemSelector: ".grid-item",
     percentPosition: true,
