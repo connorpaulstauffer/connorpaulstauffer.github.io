@@ -1,16 +1,15 @@
 $(function () {
-  $("#content-grid").isotope({ filter: ".project" });
+  $("#content-grid").isotope({ filter: ".nill" });
 
-  var $grid = $("#content-grid").isotope({
+  var $grid = $("#content-grid").imagesLoaded(function () {
+    $grid.isotope({
       itemSelector: ".grid-item",
       percentPosition: true,
       masonry: {
         columnWidth: ".grid-sizer"
       }
-  });
-
-  $grid.imagesLoaded().progress(function() {
-    $grid.isotope('layout');
+    });
+    $("#content-grid").isotope({ filter: ".project" });
   });
 
   $("#projects-button").on("click", function () {
