@@ -1,12 +1,14 @@
 $(function () {
   $("#content-grid").isotope({ filter: ".project" });
 
-  $("#content-grid").isotope({
-    itemSelector: ".grid-item",
-    percentPosition: true,
-    masonry: {
-      columnWidth: ".grid-sizer"
-    }
+  var $grid = $("#content-grid").imagesLoaded(function () {
+    $grid.isotope({
+      itemSelector: ".grid-item",
+      percentPosition: true,
+      masonry: {
+        columnWidth: ".grid-sizer"
+      }
+    });
   });
 
   $("#projects-button").on("click", function () {
