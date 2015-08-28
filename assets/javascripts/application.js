@@ -15,15 +15,15 @@ $(function () {
     $("#content-grid").isotope({ filter: ".project" });
 
     $(".filter .logo, h4").show();
-    $(".filter").show("blind");
+    $("#filters-container").show("blind");
   });
 
   $("#information-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".information" });
-    
+
     $(".filter .logo, h4").hide("scale", {
       complete: function () {
-        $(".filter").hide()
+        $("#filters-container").hide()
       }
     }, 200)
   });
