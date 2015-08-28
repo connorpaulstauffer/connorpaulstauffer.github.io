@@ -253,9 +253,30 @@ body {
   -webkit-transition: all 0.5s;
 }
 
+.overlay .project-links {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.project-links .project-link {
+  border-color: #FFFFFF;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+  color: #FFFFFF;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px; 
+}
+
 .screenshot-container .overlay:hover {
   opacity: 1;
 }
+
 
 .grid-item img {
   width: 100%;
