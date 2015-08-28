@@ -24,6 +24,7 @@ $(function () {
 
   $("#projects-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".project" });
+    // $("#content-grid").isotope("shuffle");
     showFilters();
   });
 
@@ -35,7 +36,7 @@ $(function () {
   $(".filter").on("click", function (event) {
     var selector = "." + $(event.currentTarget).attr("id");
     // did this to avoid lack of activity when a filter doesn't change anything
-    $("#content-grid").isotope("shuffle");
+    // $("#content-grid").isotope("shuffle");
     $("#content-grid").isotope({ filter: selector });
   });
 
@@ -62,7 +63,7 @@ $(function () {
 
   function displayResume () {
     $("#resume-preview").removeClass("hidden");
-    
+
     var keyInterval = $( window ).on("keydown", function (event) {
       if (event.which == 27) {
         hideResume();

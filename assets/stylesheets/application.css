@@ -237,6 +237,26 @@ body {
   min-height: 100px;
 }
 
+.grid-item .screenshot-container {
+  position: relative;
+}
+
+.screenshot-container .overlay {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.screenshot-container .overlay:hover {
+  opacity: 1;
+}
+
 .grid-item img {
   width: 100%;
 }
