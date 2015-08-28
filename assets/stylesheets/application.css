@@ -59,7 +59,7 @@ body {
   }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 740px) {
   #root {
     display: flex;
     flex: 1;
@@ -90,10 +90,6 @@ body {
   #filters-container {
     padding-left: 0;
   }
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
-  /*.grid-sizer, .grid-item { width: 100%; }*/
 }
 
 #sidebar #header {
