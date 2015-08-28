@@ -52,6 +52,10 @@ body {
   .grid-item {
     padding-left: 20px;
   }
+
+  #filters-container {
+    padding-left: 20px;
+  }
 }
 
 @media screen and (min-width: 620px) {
@@ -79,6 +83,10 @@ body {
   }
 
   .grid-item {
+    padding-left: 0;
+  }
+
+  #filters-container {
     padding-left: 0;
   }
 }
@@ -142,22 +150,11 @@ body {
   padding-right: 20px;
   padding-top: 20px;
   display: inline-block;
+  transition: height 2s;
+  -moz-transition: height 2s;
+  -webkit-transition: height 2s;
+  -o-transition: height 2s;
 }
-
-/*.filter-row-item {
-  height: 120px;
-}*/
-
-/*#filters-prompt {
-  width: 20%;
-  float: left;
-  display: inline-table;
-}
-
-#filters-prompt h3 {
-  display: table-cell;
-  vertical-align: middle;
-}*/
 
 #project-filters {
   display: inline-block;
@@ -170,18 +167,35 @@ body {
   text-align: center;
 }
 
-.filter h4 {
-  font-size: 14px;
-}
 
 .filter:hover {
   cursor: pointer;
 }
 
 #project-filters .logo {
-  height: 60px;
   display: block;
   margin: auto;
+}
+
+@media screen and (min-width: 100px) {
+  #project-filters .logo {
+    height: 50px;
+  }
+
+  .filter h4 {
+    /*visibility: hidden;*/
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #project-filters .logo {
+    height: 60px;
+  }
+
+  .filter h4 {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 100px) {

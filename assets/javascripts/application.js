@@ -13,10 +13,19 @@ $(function () {
 
   $("#projects-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".project" });
+
+    $(".filter .logo, h4").show();
+    $(".filter").show("blind");
   });
 
   $("#information-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".information" });
+    
+    $(".filter .logo, h4").hide("scale", {
+      complete: function () {
+        $(".filter").hide()
+      }
+    }, 200)
   });
 
   $(".filter").on("click", function (event) {
