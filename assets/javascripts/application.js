@@ -5,10 +5,9 @@ $(function () {
     $grid.isotope({
       itemSelector: ".grid-item",
       percentPosition: true,
-      masonry: {
-        columnWidth: ".grid-sizer"
-      }
+      masonry: { columnWidth: ".grid-sizer" }
     });
+
     $("#content-grid").isotope({ filter: ".project" });
   });
 
