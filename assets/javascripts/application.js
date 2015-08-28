@@ -1,4 +1,10 @@
 $(function () {
+  $(".resume-preview-link").on("click", displayResume);
+
+  $("#resume-preview").on("click", function (event) {
+    hideResume();
+  });
+
   $("#content-grid").isotope({ filter: ".nill" });
   hideFiltersNow();
 
@@ -52,5 +58,20 @@ $(function () {
     $("#filters-container").hide()
     $(".filters").hide();
     $(".filter .logo, h4").hide();
+  };
+
+  function displayResume () {
+    $("#resume-preview").removeClass("hidden");
+    
+    var keyInterval = $( window ).on("keydown", function (event) {
+      if (event.which == 27) {
+        hideResume();
+        clearInterval(keyInterval);
+      }
+    });
+  };
+
+  function hideResume () {
+    $("#resume-preview").addClass("hidden");
   };
 });

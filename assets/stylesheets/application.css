@@ -39,6 +39,23 @@ body {
   flex-direction: column;
 }
 
+#resume-preview {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#resume-preview embed {
+  z-index: 9999;
+  width: 70%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}
+
 #sidebar {
   background-color: #F1EFE2;
   padding-bottom: 20px;
