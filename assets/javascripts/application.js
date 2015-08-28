@@ -1,5 +1,6 @@
 $(function () {
   $("#content-grid").isotope({ filter: ".nill" });
+  hideFiltersNow();
 
   var $grid = $("#content-grid").imagesLoaded(function () {
     $grid.isotope({
@@ -11,27 +12,45 @@ $(function () {
     $("#content-grid").isotope({ filter: ".project" });
   });
 
+  $("#filters-container").imagesLoaded(function () {
+    showFilters();
+  });
+
   $("#projects-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".project" });
-
-    $(".filter .logo, h4").show();
-    $("#filters-container").show()
-    $(".filters").show("blind");
+    showFilters();
   });
 
   $("#information-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".information" });
+    hideFilters();
+  });
 
+  $(".filter").on("click", function (event) {
+    var selector = "." + $(event.currentTarget).attr("id");
+    // did this to avoid lack of activity when a filter doesn't change anything
+    $("#content-grid").isotope("shuffle");
+    $("#content-grid").isotope({ filter: selector });
+  });
+
+  function showFilters() {
+    $("#filters-container").show()
+    $(".filters").show();
+    $(".filter .logo, h4").show("blind");
+  };
+
+  function hideFilters() {
     $(".filter .logo, h4").hide("scale", {
       complete: function () {
         $(".filters").hide()
         $("#filters-container").hide()
       }
     }, 200)
-  });
+  };
 
-  $(".filter").on("click", function (event) {
-    var selector = "." + $(event.currentTarget).attr("id");
-    $("#content-grid").isotope({ filter: selector });
-  });
+  function hideFiltersNow () {
+    $("#filters-container").hide()
+    $(".filters").hide();
+    $(".filter .logo, h4").hide();
+  };
 });
