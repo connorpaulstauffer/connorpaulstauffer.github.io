@@ -50,11 +50,11 @@ body {
 
 @media screen and (min-width: 100px) {
   .grid-item {
-    padding: 20px;
+    padding-left: 20px;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 620px) {
   #root {
     display: flex;
     flex: 1;
@@ -73,10 +73,13 @@ body {
   #content {
     flex: 1;
     width: 75%;
-    padding-left: 20px;
-    padding-bottom: 20px;
     overflow-y: scroll;
     margin-left: 300px;
+    padding-left: 20px;
+  }
+
+  .grid-item {
+    padding-left: 0;
   }
 }
 
@@ -91,9 +94,9 @@ body {
 }
 
 #header h1 {
-  font-size: 2vw;
+  font-size: 25px;
 	font-weight: 500;
-	line-height: 26.4px;
+	/*line-height: 26.4px;*/
   color: #206BA4;
   vertical-align: middle;
   text-align: center;
@@ -101,15 +104,14 @@ body {
 }
 
 #header h2 {
-  font-size: 1.5vw;
+  font-size: 18px;;
   font-weight: 500;
-  line-height: 26.4px;
   vertical-align: middle;
   text-align: center;
 }
 
 #sidebar #navigation {
-  font-size: 2vw;
+  font-size: 20px;
   font-weight: 500;
   line-height: 26.4px;
   vertical-align: middle;
@@ -139,11 +141,11 @@ body {
   .grid-sizer, .grid-item { width: 100%; }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .grid-sizer, .grid-item { width: 50%; }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
   .grid-sizer, .grid-item { width: 33.33%; }
 }
 
@@ -160,7 +162,7 @@ body {
   padding-top: 10px;
   padding-left: 15px;
   padding-bottom: 5px;
-  font-size: 1.75vw;
+  font-size: 24px;
   font-weight: 500;
   line-height: 26.4px;
 }
@@ -169,25 +171,30 @@ body {
   padding-top: 5px;
   padding-left: 15px;
   font-weight: 600;
-  font-size: 1.25vw;
+  font-size: 20px;
 }
 
 .grid-item p {
   padding: 15px;
   padding-top: 5px;
-  font-size: 1.25vw;
+  font-size: 18px;
 }
 
 .grid-item p.small {
-  font-size: 1.15vw;
+  font-size: 14px;
 }
 
 .grid-item ul {
   padding: 15px;
   padding-top: 5px;
-  font-size: 1.25vw;
+  font-size: 16px;
 }
 
 .grid-item li {
   padding-bottom: 2px;
+}
+
+.grid-item a {
+  word-wrap: break-word;
+  font-size: 16px;
 }
