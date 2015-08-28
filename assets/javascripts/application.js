@@ -15,7 +15,8 @@ $(function () {
     $("#content-grid").isotope({ filter: ".project" });
 
     $(".filter .logo, h4").show();
-    $("#filters-container").show("blind");
+    $("#filters-container").show()
+    $(".filters").show("blind");
   });
 
   $("#information-button").on("click", function () {
@@ -23,6 +24,7 @@ $(function () {
 
     $(".filter .logo, h4").hide("scale", {
       complete: function () {
+        $(".filters").hide()
         $("#filters-container").hide()
       }
     }, 200)
