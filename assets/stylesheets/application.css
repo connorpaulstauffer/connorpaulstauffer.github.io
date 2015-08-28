@@ -174,6 +174,10 @@ body {
   font-size: 14px;
 }
 
+.filter:hover {
+  cursor: pointer;
+}
+
 #project-filters .logo {
   height: 60px;
   display: block;

@@ -18,4 +18,9 @@ $(function () {
   $("#information-button").on("click", function () {
     $("#content-grid").isotope({ filter: ".information" });
   });
+
+  $(".filter").on("click", function (event) {
+    var selector = "." + $(event.currentTarget).attr("id");
+    $("#content-grid").isotope({ filter: selector });
+  });
 });
