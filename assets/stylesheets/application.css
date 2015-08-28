@@ -49,10 +49,6 @@ body {
   padding-bottom: 20px;
 }
 
-/*@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
-  .grid-sizer, .grid-item { width: 100%; }
-}*/
-
 @media screen and (min-width: 100px) {
   .grid-item {
     padding-left: 20px;
@@ -63,7 +59,7 @@ body {
   }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 620px) {
   #root {
     display: flex;
     flex: 1;
@@ -94,6 +90,10 @@ body {
   #filters-container {
     padding-left: 0;
   }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
+  /*.grid-sizer, .grid-item { width: 100%; }*/
 }
 
 #sidebar #header {
