@@ -137,6 +137,49 @@ body {
   box-sizing: border-box;
 }
 
+#filters-container {
+  width: 100%;
+  padding-right: 20px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+/*.filter-row-item {
+  height: 120px;
+}*/
+
+/*#filters-prompt {
+  width: 20%;
+  float: left;
+  display: inline-table;
+}
+
+#filters-prompt h3 {
+  display: table-cell;
+  vertical-align: middle;
+}*/
+
+#project-filters {
+  display: inline-block;
+  width: 100%;
+}
+
+#project-filters .filter {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.filter h4 {
+  font-size: 14px;
+}
+
+#project-filters .logo {
+  height: 60px;
+  display: block;
+  margin: auto;
+}
+
 @media screen and (min-width: 100px) {
   .grid-sizer, .grid-item { width: 100%; }
 }
