@@ -8,15 +8,23 @@ $(function () {
   };
 
   function route () {
+    window.currentPage = window.currentPage || null;
     var hash = urlHash().split("/");
 
     if (hash[0] == "projects") {
-      displayProjects(hash[1]);
+      if (window.currentPage == "projects") {
+        filterProjects(hash[1]);
+      } else {
+        displayProjects(hash[1]);
+      }
+      window.currentPage = "projects";
     } else if (hash[0] == "information"){
       displayInformation();
+      window.currentPage = "information";
     } else {
       window.location.hash = "projects";
       displayProjects();
+      window.currentPage = "projects";
     }
   };
 
@@ -34,11 +42,15 @@ $(function () {
       });
 
       if (filter) {
-        $("#content-grid").isotope({ filter: "." + filter });
+        filterProjects(filter);
       } else {
         $("#content-grid").isotope({ filter: ".project" });
       }
     });
+  };
+
+  function filterProjects (filter) {
+    $("#content-grid").isotope({ filter: "." + filter });
   };
 
   function displayInformation () {
@@ -48,7 +60,6 @@ $(function () {
 
   function bindListeners () {
     $( window ).on("hashchange", function (event) {
-      debugger;
       event.preventDefault();
       route();
     });
