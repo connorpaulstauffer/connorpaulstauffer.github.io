@@ -27,7 +27,8 @@ a:hover {
 }
 
 * {
-  font-family: 'Century Gothic', 'Apple Gothic', sans-serif;
+  font-family: "Century Gothic", "Apple Gothic", AppleGothic, "URW Gothic L",
+    "Avant Garde", Futura, sans-serif;
   font-style: normal;
   font-variant: normal;
 }
@@ -269,9 +270,11 @@ body {
 .overlay .project-links {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   width: 100%;
   text-align: center;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 
 .project-links .project-link {
