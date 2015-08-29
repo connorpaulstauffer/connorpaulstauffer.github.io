@@ -310,7 +310,7 @@ body {
   padding-top: 10px;
   padding-left: 15px;
   padding-bottom: 5px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 26.4px;
 }
@@ -319,18 +319,18 @@ body {
   padding-top: 5px;
   padding-left: 15px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .grid-item p {
   padding: 15px;
   padding-top: 5px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-.grid-item p.small {
+/*.grid-item p.small {
   font-size: 14px;
-}
+}*/
 
 .grid-item ul {
   padding: 15px;

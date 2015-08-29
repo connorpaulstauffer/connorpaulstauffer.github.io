@@ -1,52 +1,72 @@
 $(function () {
-  $(".resume-preview-link").on("click", displayResume);
-
-  $("#resume-preview").on("click", function (event) {
-    hideResume();
-  });
-
   $("#content-grid").isotope({ filter: ".nill" });
-  hideFiltersNow();
+  bindListeners();
+  route();
 
-  var $grid = $("#content-grid").imagesLoaded(function () {
-    $grid.isotope({
-      itemSelector: ".grid-item",
-      percentPosition: true,
-      masonry: { columnWidth: ".grid-sizer" }
+  function urlHash () {
+    return window.location.hash.replace('#','');
+  };
+
+  function route () {
+    var hash = urlHash().split("/");
+
+    if (hash[0] == "projects") {
+      displayProjects(hash[1]);
+    } else if (hash[0] == "information"){
+      displayInformation();
+    } else {
+      window.location.hash = "projects";
+      displayProjects();
+    }
+  };
+
+  function displayProjects (filter) {
+    hideFiltersNow();
+    $("#filters-container").imagesLoaded(function () {
+      showFilters();
     });
 
-    $("#content-grid").isotope({ filter: ".project" });
-  });
+    var $grid = $("#content-grid").imagesLoaded(function () {
+      $grid.isotope({
+        itemSelector: ".grid-item",
+        percentPosition: true,
+        masonry: { columnWidth: ".grid-sizer" }
+      });
 
-  $("#filters-container").imagesLoaded(function () {
-    showFilters();
-  });
+      if (filter) {
+        $("#content-grid").isotope({ filter: "." + filter });
+      } else {
+        $("#content-grid").isotope({ filter: ".project" });
+      }
+    });
+  };
 
-  $("#projects-button").on("click", function () {
-    $("#content-grid").isotope({ filter: ".project" });
-    // $("#content-grid").isotope("shuffle");
-    showFilters();
-  });
-
-  $("#information-button").on("click", function () {
+  function displayInformation () {
     $("#content-grid").isotope({ filter: ".information" });
     hideFilters();
-  });
+  };
 
-  $(".filter").on("click", function (event) {
-    var selector = "." + $(event.currentTarget).attr("id");
-    // did this to avoid lack of activity when a filter doesn't change anything
-    // $("#content-grid").isotope("shuffle");
-    $("#content-grid").isotope({ filter: selector });
-  });
+  function bindListeners () {
+    $( window ).on("hashchange", function (event) {
+      debugger;
+      event.preventDefault();
+      route();
+    });
 
-  function showFilters() {
+    $(".resume-preview-link").on("click", displayResume);
+
+    $("#resume-preview").on("click", function (event) {
+      hideResume();
+    });
+  };
+
+  function showFilters () {
     $("#filters-container").show()
     $(".filters").show();
     $(".filter .logo, h4").show("blind");
   };
 
-  function hideFilters() {
+  function hideFilters () {
     $(".filter .logo, h4").hide("scale", {
       complete: function () {
         $(".filters").hide()
