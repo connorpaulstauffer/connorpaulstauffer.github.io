@@ -27,14 +27,14 @@ a:hover {
 }
 
 * {
-  font-family: 'Century Gothic';
+  font-family: 'Century Gothic', 'Apple Gothic', sans-serif;
   font-style: normal;
   font-variant: normal;
 }
 
 body {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   flex-direction: column;
 }
 
