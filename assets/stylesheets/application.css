@@ -43,7 +43,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 999;
 }
 
@@ -248,6 +248,14 @@ body {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: rgba(192, 192, 192, .5);
+}
+
+.grid-item.information .grid-item-header {
+  border-top-style: none;
+}
+
+.grid-item.information .grid-item-header h2 {
+  padding-top: 5px;
 }
 
 .grid-item .screenshot-container {
