@@ -1,6 +1,8 @@
 $(function () {
   $("#content-grid").isotope({ filter: ".nill" });
+  hideFiltersNow();
   bindListeners();
+  initializeIsotope();
   route();
 
   function urlHash () {
@@ -28,6 +30,14 @@ $(function () {
     }
   };
 
+  function initializeIsotope () {
+    $("#content-grid").isotope({
+      itemSelector: ".grid-item",
+      percentPosition: true,
+      masonry: { columnWidth: ".grid-sizer" }
+    });
+  };
+
   function displayProjects (filter) {
     hideFiltersNow();
     $("#filters-container").imagesLoaded(function () {
@@ -35,16 +45,10 @@ $(function () {
     });
 
     var $grid = $("#content-grid").imagesLoaded(function () {
-      $grid.isotope({
-        itemSelector: ".grid-item",
-        percentPosition: true,
-        masonry: { columnWidth: ".grid-sizer" }
-      });
-
       if (filter) {
         filterProjects(filter);
       } else {
-        $("#content-grid").isotope({ filter: ".project" });
+        $grid.isotope({ filter: ".project" });
       }
     });
   };
@@ -54,8 +58,10 @@ $(function () {
   };
 
   function displayInformation () {
-    $("#content-grid").isotope({ filter: ".information" });
     hideFilters();
+    var $grid = $("#content-grid").imagesLoaded(function () {
+      $grid.isotope({ filter: ".information" });
+    });
   };
 
   function bindListeners () {
