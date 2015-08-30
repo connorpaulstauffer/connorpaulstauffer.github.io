@@ -54,7 +54,11 @@ $(function () {
   };
 
   function filterProjects (filter) {
-    $("#content-grid").isotope({ filter: "." + filter });
+    if (filter) {
+      $("#content-grid").isotope({ filter: "." + filter });
+    } else {
+      $("#content-grid").isotope({ filter: ".project" });
+    }
   };
 
   function displayInformation () {
