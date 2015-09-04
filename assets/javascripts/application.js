@@ -39,6 +39,8 @@ $(function () {
   };
 
   function displayProjects (filter) {
+    $("#information-button").removeClass("active");
+    $("#projects-button").addClass("active");
     hideFiltersNow();
     $("#filters-container").imagesLoaded(function () {
       showFilters();
@@ -62,6 +64,8 @@ $(function () {
   };
 
   function displayInformation () {
+    $("#projects-button").removeClass("active");
+    $("#information-button").addClass("active");
     hideFilters();
     var $grid = $("#content-grid").imagesLoaded(function () {
       $grid.isotope({ filter: ".information" });

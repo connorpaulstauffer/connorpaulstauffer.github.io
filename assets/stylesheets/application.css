@@ -185,7 +185,11 @@ body {
   border-color: #C0C0C0;
   border-width: 2px;
   text-decoration: none;
-  color: #000000;
+  color: rgba(0, 0, 0, .6);
+}
+
+#navigation .nav-button.active {
+  color: rgba(0, 0, 0, 1);
 }
 
 #navigation li {
