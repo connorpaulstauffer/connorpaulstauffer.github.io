@@ -39,6 +39,7 @@ $(function () {
   };
 
   function displayProjects (filter) {
+    $(".filter").addClass("active");
     $("#information-button").removeClass("active");
     $("#projects-button").addClass("active");
     hideFiltersNow();
@@ -57,8 +58,11 @@ $(function () {
 
   function filterProjects (filter) {
     if (filter) {
+      $(".filter").removeClass("active");
+      $(".filter" + "#" + filter).addClass("active")
       $("#content-grid").isotope({ filter: "." + filter });
     } else {
+      $(".filter").addClass("active");
       $("#content-grid").isotope({ filter: ".project" });
     }
   };

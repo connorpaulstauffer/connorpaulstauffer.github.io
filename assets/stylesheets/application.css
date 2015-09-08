@@ -77,16 +77,29 @@ body {
     padding-left: 20px;
   }
 
-  #project-filters .logo {
-    height: 50px;
+  .filter .logo {
+    height: 55px;
   }
 
   .filter h4 {
-    font-size: 10px;
+    font-size: 14px;
+  }
+
+  .filter.active h4, .filter.active .logo {
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+    filter: url(shadow.svg#drop-shadow);
+  }
+
+  .filter.active h4 {
+    font-size: 16px;
+  }
+
+  .filter.active .logo {
+    height: 60px;
   }
 
   .grid-sizer, .grid-item { width: calc(100% - 40px); }
-}
+
 
 /*multiple column layout*/
 @media screen and (min-width: 740px) {
@@ -119,14 +132,6 @@ body {
 
   #filters-container {
     padding-left: 0;
-  }
-
-  #project-filters .logo {
-    height: 60px;
-  }
-
-  .filter h4 {
-    font-size: 14px;
   }
 
   @media screen and (min-width: 100px) {
