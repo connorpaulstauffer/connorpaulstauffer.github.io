@@ -66,6 +66,17 @@ body {
   padding-bottom: 20px;
 }
 
+#filters-container {
+  position: relative;
+}
+
+.filter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
 
 /*collapsed to one column*/
 @media screen and (min-width: 100px) {
@@ -133,11 +144,17 @@ body {
   .filter .logo {
     height: 55px;
     transition: height .25s;
+    -moz-transition: height .25s;
+    -webkit-transition: height .25s;
+    -o-transition: height .25s;
   }
 
   .filter h4 {
     font-size: 14px;
     transition: font-size .25s;
+    -moz-transition: font-size .25s;
+    -webkit-transition: font-size .25s;
+    -o-transition: font-size .25s;
   }
 
   .filter.active .logo {
