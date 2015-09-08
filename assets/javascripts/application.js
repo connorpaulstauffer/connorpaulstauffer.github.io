@@ -109,7 +109,7 @@ $(function () {
         $(".filters").hide()
         $("#filters-container").hide()
       }
-    }, 300)
+    }, 200)
   };
 
   function hideFiltersNow () {
