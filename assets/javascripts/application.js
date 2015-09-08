@@ -44,7 +44,7 @@ $(function () {
     $("#projects-button").addClass("active");
     hideFiltersNow();
     $("#filters-container").imagesLoaded(function () {
-      showFilters();
+      showFilters("active");
     });
 
     var $grid = $("#content-grid").imagesLoaded(function () {
@@ -90,18 +90,26 @@ $(function () {
   };
 
   function showFilters () {
-    $("#filters-container").show()
-    $(".filters").show();
-    $(".filter .logo, h4").show("blind");
+    $("#filters-container").show();
+    recursiveShow($(".filter").first());
+  };
+
+  function recursiveShow (element) {
+    setTimeout(function () {
+      element.find(".logo").show("slide", 300);
+      element.find("h4").show("slide", 300);
+      var next = element.parent().next().find(".filter");
+      if (next.length > 0) { recursiveShow(next) }
+    }, 50)
   };
 
   function hideFilters () {
-    $(".filter .logo, h4").hide("scale", {
+    $(".filter .logo, h4").hide("slide", {
       complete: function () {
         $(".filters").hide()
         $("#filters-container").hide()
       }
-    }, 200)
+    }, 300)
   };
 
   function hideFiltersNow () {
