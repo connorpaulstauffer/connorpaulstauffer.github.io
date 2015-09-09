@@ -311,12 +311,13 @@ body {
 .grid-item .screenshot-container {
   position: relative;
   width: calc(100% + 10px);
-  padding: 5px;
+  /*padding-top: 5px;*/
+  /*padding-bottom: 5px;*/
   margin-left: -5px;
   margin-bottom: 5px;
-  border-bottom-style: solid;
+  /*border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: rgba(192, 192, 192, .5);
+  border-bottom-color: rgba(192, 192, 192, .5);*/
 }
 
 .screenshot-container .screenshot-image {
@@ -387,10 +388,6 @@ body {
   padding-top: 5px;
   font-size: 16px;
 }
-
-/*.grid-item p.small {
-  font-size: 14px;
-}*/
 
 .grid-item ul {
   padding: 15px;

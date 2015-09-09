@@ -31,11 +31,13 @@ $(function () {
   };
 
   function initializeIsotope () {
-    $("#content-grid").isotope({
-      itemSelector: ".grid-item",
-      percentPosition: true,
-      masonry: { columnWidth: ".grid-sizer" }
-    });
+    $grid = $("#content-grid").imagesLoaded(function () {
+      $grid.isotope({
+        itemSelector: ".grid-item",
+        percentPosition: true,
+        masonry: { columnWidth: ".grid-sizer" }
+      });
+    })
   };
 
   function displayProjects (filter) {
