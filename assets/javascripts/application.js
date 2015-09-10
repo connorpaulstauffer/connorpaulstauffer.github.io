@@ -55,6 +55,7 @@ $(function () {
       } else {
         $grid.isotope({ filter: ".project" });
       }
+      showContent();
     });
   };
 
@@ -67,6 +68,7 @@ $(function () {
       $(".filter").addClass("active");
       $("#content-grid").isotope({ filter: ".project" });
     }
+    showContent();
   };
 
   function displayInformation () {
@@ -75,6 +77,7 @@ $(function () {
     hideFilters();
     var $grid = $("#content-grid").imagesLoaded(function () {
       $grid.isotope({ filter: ".information" });
+      showContent();
     });
   };
 
@@ -118,6 +121,14 @@ $(function () {
     $("#filters-container").hide()
     $(".filters").hide();
     $(".filter .logo, h4").hide();
+  };
+
+  function hideContent () {
+    $("#content-grid").css("visibility", "hidden");
+  };
+
+  function showContent () {
+    $("#content-grid").css("visibility", "visible");
   };
 
   function displayResume () {
